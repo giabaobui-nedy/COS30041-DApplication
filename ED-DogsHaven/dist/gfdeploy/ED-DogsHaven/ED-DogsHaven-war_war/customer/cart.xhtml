@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>Your Cart</title>
+    </head>
+    <body>
+        <h1>Cart</h1>
+        <h:form>
+            <h:dataTable value="#{loginBean.cartItems}" var="dog">
+                <h:column>
+                    <f:facet name="header">Name</f:facet>
+                        #{dog.name}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Price</f:facet>
+                        #{dog.price}
+                </h:column>
+                <h:column>
+                    <h:form>
+                        <h:commandButton value="Remove" action="#{loginBean.removeCartItem(dog.dogId)}"/>
+                    </h:form>
+                </h:column>
+            </h:dataTable>
+            <h3>Total Price: #{loginBean.totalPrice}</h3>
+            <h:commandButton value="Checkout" action="#{loginBean.addAnOrder()}" />
+        </h:form>
+        <div>Back to <a href="/ED-DogsHaven-war/faces/main.xhtml">Main</a> to continue shopping</div>
+    </body>
+</html>

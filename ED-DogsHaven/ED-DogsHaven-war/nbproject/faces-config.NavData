@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="admin/addADog-failure.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="admin/updateADog-failure.xhtml" x="900" y="750" zoom="true"/>
+        <Node id="auth-error.xhtml" x="650" y="750" zoom="true"/>
+        <Node id="admin/updateCustomerDetail.xhtml" x="1650" y="300" zoom="true"/>
+        <Node id="admin/viewAllDogs.xhtml" x="400" y="1050" zoom="true"/>
+        <Node id="register-failure.xhtml" x="1400" y="150" zoom="true"/>
+        <Node id="admin/updateCustomerDetail-failure.xhtml" x="150" y="1050" zoom="true"/>
+        <Node id="admin/updateCustomerDetail-success.xhtml" x="1400" y="450" zoom="true"/>
+        <Node id="admin/addADog-success.xhtml" x="1650" y="150" zoom="true"/>
+        <Node id="admin/viewAllOrders.xhtml" x="150" y="1200" zoom="true"/>
+        <Node id="admin/updateADog-success.xhtml" x="1150" y="450" zoom="true"/>
+        <Node id="admin/viewAllCustomers.xhtml" x="400" y="900" zoom="true"/>
+        <Node id="admin/updateADog.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="customer/viewAllOrders.xhtml" x="650" y="900" zoom="true"/>
+        <Node id="customer/updateDetail-failure.xhtml" x="900" y="450" zoom="true"/>
+        <Node id="requireLogin.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="error.xhtml" x="400" y="750" zoom="true"/>
+        <Node id="customer/checkout-success.xhtml" x="1400" y="300" zoom="true"/>
+        <Node id="admin/dashboard.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="admin/addADog.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="register-success.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="main.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="customer/dashboard.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="customer/updateDetail.xhtml" x="150" y="900" zoom="true"/>
+        <Node id="customer/cart.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="login.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="customer/viewDetail.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="retryLogin.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="customer/updatePassword.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="customer/removeOrder-success.xhtml" x="1900" y="150" zoom="true"/>
+        <Node id="updateDetail-success.xhtml" x="900" y="600" zoom="true"/>
+        <Node id="register.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="customer/removeOrder-failure.xhtml" x="1150" y="300" zoom="true"/>
+        <Node id="customer/addCartItem-failure.xhtml" x="1150" y="600" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

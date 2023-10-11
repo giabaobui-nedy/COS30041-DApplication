@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>View All Dogs</title>
+    </h:head>
+    <h:body>
+        <h2>All Dogs</h2>
+        <h:dataTable value="#{dogBean.getAllDogsForAdmin()}" var="dog">
+            <h:column>
+                <f:facet name="header">ID</f:facet>
+                    #{dog.dogId}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Name</f:facet>
+                    #{dog.name}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Breed</f:facet>
+                    #{dog.breed}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Characteristic</f:facet>
+                    #{dog.characteristic}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Description</f:facet>
+                    #{dog.description}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Age</f:facet>
+                    #{dog.age}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Price</f:facet>
+                    #{dog.price}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Availability</f:facet>
+                    #{dog.isAvailable ? 'Available' : 'Not Available'}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Sold</f:facet>
+                    #{dog.isSold ? 'Sold' : 'Not Sold'}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Actions</f:facet>
+                <h:link value="Edit" outcome="updateADog.xhtml">
+                    <f:param name="dogId" value="#{dog.dogId}" />
+                    <f:param name="name" value="#{dog.name}" />
+                    <f:param name="breed" value="#{dog.breed}" />
+                    <f:param name="characteristic" value="#{dog.characteristic}" />
+                    <f:param name="description" value="#{dog.description}" />
+                    <f:param name="age" value="#{dog.age}" />
+                    <f:param name="price" value="#{dog.price}" />
+                    <f:param name="isAvailable" value="#{dog.isAvailable}" />
+                    <f:param name="isSold" value="#{dog.isSold}" />
+                </h:link>
+            </h:column>
+        </h:dataTable>
+        <p><h:link value="Back to Dashboard" outcome="/admin/dashboard.xhtml" /></p>
+    </h:body>
+</html>

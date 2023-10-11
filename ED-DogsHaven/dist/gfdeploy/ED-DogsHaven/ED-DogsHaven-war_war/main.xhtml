@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Dogs Haven</title>
+    </h:head>
+
+    <h:body>
+        <h1>Welcome to Dogs Haven!!!</h1>
+
+        <h3>These are our (some are not) cheerful friends!</h3>
+
+        <h:panelGroup rendered="#{not loginBean.loggedIn}">
+            <h4>Please register <h:link value="here" outcome="register"/> if you want to adopt another cutie family member in your house.</h4>
+            <h4>Or if you already have an account, please log in <h:link value="here" outcome="login"/>.</h4>
+        </h:panelGroup>
+        <h:panelGroup rendered="#{loginBean.ACustomer}">
+            <!-- Link to the customer dashboard -->
+            <h4>Welcome back! <h:link value="Go to Dashboard" outcome="/customer/dashboard"/></h4>
+            <h4>Your <h:link value="cart" outcome="/customer/cart"/></h4>
+            <!-- Logout button -->
+            <h:form>
+                <h:commandButton value="Logout" action="#{loginBean.logout()}" />
+            </h:form>
+        </h:panelGroup>
+        <h:panelGroup rendered="#{loginBean.anAdmin}">
+            <!-- Link to the admin dashboard -->
+            <h4>Welcome Admin! <h:link value="Go to Dashboard" outcome="/admin/dashboard"/></h4>
+            <!-- Logout button -->
+            <h:form>
+                <h:commandButton value="Logout" action="#{loginBean.logout()}" />
+            </h:form>
+        </h:panelGroup>
+        <ui:repeat value="#{dogBean.allDogsForCustomer}" var="dog">
+            <div style="border: solid 1px black; padding: 2%;">
+                Dog ID:
+                <h:outputText value="#{dog.dogId}"/>
+                <br/>
+                Name:
+                <h:outputText value="#{dog.name}"/>
+                <br/>
+                Breed:
+                <h:outputText value="#{dog.breed}"/>
+                <br/>
+                Characteristic:
+                <h:outputText value="#{dog.characteristic}"/>
+                <br/>
+                Description:
+                <h:outputText value="#{dog.description}"/>
+                <br/>
+                Age:
+                <h:outputText value="#{dog.age}"/>
+                <br/>
+                Price:
+                <h:outputText value="#{dog.price}"/>
+                <br/>
+                <h:form>
+                    <h:commandButton value="Add To Cart" action="#{loginBean.addCartItem(dog)}"/>
+                </h:form>
+            </div>
+        </ui:repeat>
+    </h:body>
+
+</html>

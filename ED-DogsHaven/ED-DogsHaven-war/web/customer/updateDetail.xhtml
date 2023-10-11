@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Change Your Details</title>
+    </h:head>
+    <h:body>
+
+        <h2>Change Your Details</h2>
+
+        <p></p>
+
+        <h:form>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Name:"/>
+                        </td>
+                        <td>
+                            <h:inputText value ="#{loginBean.username}"
+                                         title="Name" id="name"
+                                         maxlength="25"
+                                         required="true" 
+                                         requiredMessage="Name must not be blank"/>
+                        </td>
+                        <td>
+                            <h:message for="name" style="color:red"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Phone:"/>
+                        </td>
+                        <td>
+                            <h:inputText value ="#{loginBean.userPhone}"
+                                         title="Phone" maxlength="10"
+                                         required="false" />     
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Address:"/>
+                        </td>
+                        <td>
+                            <h:inputText value ="#{loginBean.userAddress}"
+                                         title="Address" maxlength="30" 
+                                         required="false"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Email:"/>
+                        </td>
+                        <td>
+                            <h:inputText value ="#{loginBean.userEmail}"
+                                         title="Email" maxlength="30" 
+                                         required="false"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Password:"/>
+                        </td>
+                        <td>
+                            <h:inputSecret id="password"
+                                           title="Password" 
+                                           maxlength="8"
+                                           required="true"
+                                           requiredMessage="Please enter your password to proceed"
+                                           value ="#{loginBean.oldPassword}"
+                                           validator="#{loginBean.validateOldPassword}">
+                            </h:inputSecret>
+                            <h:message for="password" style="color:red"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p></p>
+            <h:commandButton value="Update Details" action="#{loginBean.updateUser()}" />
+        </h:form>
+        <p></p>
+        <p><h:link value="Back to All Customers" outcome="/customer/viewDetail.xhtml" /></p>
+        <p><h:link value="Back to Dashboard" outcome="dashboard" /></p>
+    </h:body>
+</html>

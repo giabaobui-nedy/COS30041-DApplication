@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>View All Users</title>
+    </h:head>
+    <h:body>
+        <h1>All Customers</h1>
+        <h:dataTable value="#{userBean.getAllCustomers()}" var="customer">
+            <h:column>
+                <f:facet name="header">User ID</f:facet>
+                    #{customer.userid}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Name</f:facet>
+                    #{customer.name}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Phone</f:facet>
+                    #{customer.phone}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Address</f:facet>
+                    #{customer.address}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Email</f:facet>
+                    #{customer.email}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Active</f:facet>
+                    #{customer.active}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Action</f:facet>
+                <h:link value="Update Details" outcome="updateCustomerDetail">
+                    <f:param name="userId" value="#{customer.userid}" />
+                    <f:param name="name" value="#{customer.name}" />
+                    <f:param name="phone" value="#{customer.phone}" />
+                    <f:param name="address" value="#{customer.address}" />
+                    <f:param name="email" value="#{customer.email}" />
+                    <f:param name="appgroup" value="#{customer.appgroup}" />
+                    <f:param name="active" value="#{customer.active}" />
+                    <!-- Add any additional parameters you want to pass -->
+                </h:link>
+            </h:column>
+        </h:dataTable>
+        <p><h:link value="Back to Dashboard" outcome="/admin/dashboard.xhtml" /></p>
+    </h:body>
+</html>

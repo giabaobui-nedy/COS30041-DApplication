@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Add a Dog</title>
+    </h:head>
+
+    <h:body>
+        <h2>Add a Dog</h2>
+        <p></p>
+        <h:form>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><h:outputLabel for="name" value="Name:" /></td>
+                        <td><h:inputText id="name" value="#{dogBean.name}" required="true" /></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel for="breed" value="Breed:" /></td>
+                        <td><h:inputText id="breed" value="#{dogBean.breed}" required="true" /></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel for="characteristic" value="Characteristic:" /></td>
+                        <td><h:inputText id="characteristic" value="#{dogBean.characteristic}" required="true" /></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel for="description" value="Description:" /></td>
+                        <td><h:inputTextarea id="description" value="#{dogBean.description}" rows="6" cols="30" required="true" /></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel for="age" value="Age:" /></td>
+                        <td><h:inputText id="age" value="#{dogBean.age}" required="true" /></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel for="price" value="Price:" /></td>
+                        <td><h:inputText id="price" value="#{dogBean.price}" required="true" /></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p></p>
+            <h:commandButton value="Add Dog" action="#{dogBean.addADog()}" />
+        </h:form>
+        <p></p>
+        <p><h:link value="Back to Dashboard" outcome="/admin/dashboard.xhtml" /></p>
+    </h:body>
+</html>

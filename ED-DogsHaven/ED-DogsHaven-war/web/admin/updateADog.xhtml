@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Edit Dog</title>
+    </h:head>
+    <h:body>
+        <h2>Edit Dog</h2>
+        <h:form>
+            <h:inputHidden value="#{dogBean.dogId}" />
+            <p>
+                <label>Name:</label>
+                <h:inputText value="#{dogBean.name}" />
+            </p>
+            <p>
+                <label>Breed:</label>
+                <h:inputText value="#{dogBean.breed}" />
+            </p>
+            <p>
+                <label>Characteristic:</label>
+                <h:inputText value="#{dogBean.characteristic}" />
+            </p>
+            <p>
+                <label>Description:</label>
+                <h:inputTextarea value="#{dogBean.description}" rows="5" cols="30" />
+            </p>
+            <p>
+                <label>Age:</label>
+                <h:inputText value="#{dogBean.age}" />
+            </p>
+            <p>
+                <label>Price:</label>
+                <h:inputText value="#{dogBean.price}" />
+            </p>
+            <p>
+                <label>Availability:</label>
+                <h:selectBooleanCheckbox value="#{dogBean.isAvailable}" />
+            </p>
+            <p>
+                <label>Sold:</label>
+                <h:selectBooleanCheckbox value="#{dogBean.isSold}" />
+            </p>
+            <h:commandButton value="Save Changes" action="#{dogBean.updateADog()}" />
+        </h:form>
+        <h:link value="Back to View All Dogs" outcome="/admin/viewAllDogs.xhtml" />
+    </h:body>
+</html>

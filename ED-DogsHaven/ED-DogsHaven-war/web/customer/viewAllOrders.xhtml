@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>View All Orders</title>
+    </h:head>
+    <h:body>
+        <h1>View All Orders</h1>
+        <h:dataTable value="#{loginBean.ordersFromUser}" var="order">
+            <h:column>
+                <f:facet name="header">Order ID</f:facet>
+                <h:outputText value="#{order.orderid}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Contents</f:facet>
+                <h:dataTable value="#{order.dogDTOCollection}" var="dog">
+                    <h:column>
+                        <h:outputText value="Dog Name: #{dog.name}" />
+                    </h:column>
+                    <h:column>
+                        <h:outputText value="Price: #{dog.price}" />
+                    </h:column>
+                </h:dataTable>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Status</f:facet>
+                <h:outputText value="#{orderBean.isOrderResolved(order.dogDTOCollection) ? 'Resolved' : 'Unresolved'}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Total Price</f:facet>
+                <h:outputText value="#{orderBean.getTotalPrice(order.dogDTOCollection)}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Action</f:facet>
+                <h:form rendered="#{!orderBean.isOrderResolved(order.dogDTOCollection)}">
+                    <h:commandButton value="Remove Order" action="#{loginBean.removeAnOrder(order.orderid)}" />
+                </h:form>
+            </h:column>
+        </h:dataTable>
+        <div>Back to <h:link value="Dashboard" outcome="dashboard" /></div>
+        <div>Back to <a href="/ED-DogsHaven-war/faces/main.xhtml">Main</a> to continue shopping</div>
+    </h:body>
+</html>
